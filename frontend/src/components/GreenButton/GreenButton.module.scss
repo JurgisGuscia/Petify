@@ -1,0 +1,15 @@
+.buttonWrapper{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: linear-gradient(to right, #1c9550 0%, #31a365 100%);
+    border-radius: 5px;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    &:hover{
+        cursor: pointer;
+    }
+}
