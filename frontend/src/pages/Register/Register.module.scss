@@ -201,5 +201,18 @@
             }
 
         }
+        
+        .errorDisplay{
+            width: 400px;
+            height: 50px;
+            position: absolute;
+            z-index: 20;
+            top: 730px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border-radius: 20px;
+        }   
     }
 }

@@ -1,0 +1,27 @@
+.button{
+    padding: 5px 20px;
+    background: linear-gradient(to right, #379b6b 0%, #44a374 100%);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    .iconWrapper{
+        img{
+            width: 13px;
+            margin-right: 10px;
+            filter: invert(1);
+        }
+    }
+
+    .textWrapper{
+        font-size: 0.89rem;
+        color: white;
+    }
+}

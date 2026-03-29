@@ -1,0 +1,417 @@
+.mainWrapper{
+    z-index: 12;
+    width: 600px;
+    position: absolute;
+    border-radius: 20px;
+    display: flex;
+    height: auto;
+    flex-direction: row nowrap;
+    justify-content: center;
+    align-items: stretch;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+    .leftSide{
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        background-image: url('../../img/modalBg.png');
+        background-position: -200px top;
+        background-size: auto;
+        height: auto;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        padding: 20px;
+
+        >.loading{
+                width: 60px;
+                animation: spin 3s linear infinite;
+                position:relative;
+                left: 30%;
+                top: 20%;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+
+        .pictureWrapper{
+            width: 160px;
+            height: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .image{
+                width: 100%;
+                height: 100%;
+            }
+
+            
+            .loading{
+                width: 30px;
+                animation: spin 3s linear infinite;
+            }
+
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+        .infoTitleDisplay{
+            height: 100%;
+            height: 20px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .infoDisplay{
+            height: 100%;
+            height: 30px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+    }
+
+    .rightSide{
+        width: 400px;
+        background-color: white;
+        height: 480px;
+        border-top-right-radius: 20px; 
+        border-bottom-right-radius: 20px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        overflow-y: hidden;
+
+        .control{
+            width: 100%;
+            height: 40px;
+            padding-right: 20px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            img{
+                width: 15px;
+                height: 15px;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }  
+        
+        .serviceListTitle{
+            width: 95%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 5px 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            border-bottom: solid rgba(0, 0, 0, 0.1) 1px; 
+            
+            .titleContainer{
+                font-size: 1.2rem;
+                width: 180px;
+                flex-flow: row nowrap;
+                justify-content: flex-start;  
+                align-items: center;
+            }
+
+            .serviceTotalPrice{
+                font-size: 1.2rem;
+                width: 100px;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: flex-end;  
+                align-items: center;
+            }
+        }
+
+        .serviceList{
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            max-height: 330px;
+            min-height: 330px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            overflow-y: auto;    
+
+            .loading{
+                width: 50px;
+                animation: spin 3s linear infinite;
+                position: relative;
+                top: 150px;
+            }
+
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            &::-webkit-scrollbar-button {
+                display: none;
+                width: 0;
+                height: 0;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: rgba(0, 0, 0, 0.25);
+                border-radius: 2px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        .controlButtonContainer{
+            width: 95%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            height: 30px;
+            margin-top: 20px;
+
+            .historyControlButton{
+                width: 120px;
+                height: 30px;
+                border-radius: 5px;
+                outline: none;
+                background-color: transparent;
+                border: solid rgba(0, 0, 0, 0.5) 1px;
+                color: rgba(0, 0, 0, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover{
+                    cursor: pointer;
+                    background-color: rgba(0, 0, 0, 0.05);
+                }
+            }
+        }
+
+            
+    }
+    .secondBackDrop{
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(1px);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 20px;
+        z-index: 50;
+    }
+
+    .addService{
+        z-index: 60;
+        width: 400px;
+        height: 340px;
+        top: 50px;
+        background-color: white;
+        position: absolute;
+        border-radius: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        padding: 10px 20px;
+
+        .title{
+            width: 100%;
+            height: 40px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: solid rgba(0, 0, 0, 0.1) 1px;
+
+            span{
+                font-size: 1.2rem;
+            }
+
+            img{
+                width: 15px;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .body{
+            width: 100%;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            .selectWrapper{
+                width: 100%;
+                height: 40px;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+
+                .selectTitle{
+                    width: 170px;
+                }
+
+                .select{
+                    width: 180px;
+                    height: 25px;
+                    outline: none;
+                }
+            }
+
+            .controlWrapper{
+                width: 150px;
+                height: 35px;
+                margin-top: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+}
+
+.historyDisplay{
+    width: 600px;
+    height: 250px;
+    background-color: white;
+    position: absolute;
+    z-index: 22;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    top: 540px;
+
+    .filterWrapper{
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        width: 200px;
+        height: 100%;
+        background-image: url('../../img/modalBg.png');
+        background-position: -200px top;
+        background-size: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        padding-top: 30px;
+
+        .filterButton{
+            width: 100px;
+            height: 30px;
+            background-color: white;
+            border-radius: 10px;
+            outline: none;
+            border: solid rgba(0, 0, 0, 0.8) 1px;
+            color: rgba(0, 0, 0, 0.8);
+
+            &:hover{
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+        }
+        
+        .expenseDisplay{
+            width: 110px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            .title{
+                width: 100%;
+                height: 30px;
+            }
+
+            .expenses{
+                width: 100%;
+                height: 30px;
+                text-align: right;
+            }
+        }
+
+    }
+    
+    .serviceHistory{
+        width: 400px;
+        height: 90%;
+        padding: 10px 20px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-button {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 2px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    
+}
+
+.hidden{
+    display: none!important;
+}
+

@@ -18,12 +18,14 @@
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
         display: flex;
+        flex-direction: column;
+        gap: 10px;
         justify-content: center;
         align-items: center;
 
         .loginWrapper{
             width: 1000px;
-            height: 510px;
+            height: 470px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -65,6 +67,7 @@
                 justify-content: center;
                 align-items: center;
                 overflow: hidden;
+                
                 .leftSide{
                     height: 100%;
                     width: 50%;
@@ -174,7 +177,7 @@
                     .grassImg{
                         width: 100%;
                         position: relative;
-                        bottom: -100px;
+                        bottom: -70px;
                         right: -50px;
                         transform: scale(1.5);
                         z-index: 3;
@@ -184,7 +187,7 @@
                         width: 100px;
                         position: relative;
                         z-index: 4;
-                        top: -120px;
+                        top: -150px;
                         left: 200px;
                         transform: scale(2);
                     }
@@ -193,7 +196,7 @@
                         width: 100px;
                         position: relative;
                         z-index: 4;
-                        top: -55px;
+                        top: -95px;
                         left: 210px;
                         transform: scale(3);
                     }
@@ -201,5 +204,18 @@
             }
 
         }
+
+        .errorDisplay{
+            width: 400px;
+            height: 50px;
+            position: absolute;
+            z-index: 20;
+            top: 730px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border-radius: 20px;
+        }   
     }
 }

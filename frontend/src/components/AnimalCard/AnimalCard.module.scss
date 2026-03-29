@@ -1,0 +1,63 @@
+.mainWrapper{
+    background-color: #fff;
+    width: 100%;
+    height: 70px;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: ease-in-out 0.1s;
+
+    &:hover{
+        cursor: pointer;
+        border: solid grey 1px;
+        transition: ease-in-out 0.1s;
+    }
+
+    .imgWrapper{
+        width: 60px;
+        height: 60px;
+
+        img{
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+        }
+        
+    }
+
+    .infoWrapper{
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 170px;
+        overflow: hidden;
+        height: 100%;
+        gap: 10px;
+        
+        .infoName{
+            width: 100%;
+            font-size: 1.2rem;
+
+        }
+
+        .infoBreed{
+            width: 100%;
+            font-size: 0.9rem;
+        }
+    }
+
+    .nextVisitWrapper{
+        height: 100%;
+        width: 190px;
+        margin-left: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
