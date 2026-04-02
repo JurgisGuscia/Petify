@@ -31,6 +31,7 @@ export default function Home() {
   const [PetToEdit, setPetToEdit] = useState(null);
   const [serviceList, setServiceList] = useState(0);
   const [serviceRefresh, setServiceRefresh] = useState(0);
+  const [pastServiceList, setPastServiceList] = useState(0);
 
   function refreshServices() {
     setServiceRefresh((prev) => !prev);
@@ -72,6 +73,16 @@ export default function Home() {
             const serviceDate = new Date(service.date);
             serviceDate.setHours(0, 0, 0, 0);
             return serviceDate >= today && serviceDate <= endOfMonth;
+          }),
+        );
+        setPastServiceList(
+          data.filter((service) => {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const startOfMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+            const serviceDate = new Date(service.date);
+            serviceDate.setHours(0, 0, 0, 0);
+            return serviceDate >= startOfMonth && serviceDate < today;
           }),
         );
       })
@@ -280,7 +291,7 @@ export default function Home() {
             <div className={styles.middleSection}>
               <div className={styles.middleSectionTop}>
                 <div className={styles.middleSectionTopTitleWrapper}>
-                  <div className={styles.middleSectionTopTitle}>Upcoming services</div>
+                  <div className={styles.middleSectionTopTitle}>Upcoming Services</div>
                 </div>
                 <div className={styles.middleSectionTopBody}>
                   {serviceList.length >= 0
@@ -295,9 +306,16 @@ export default function Home() {
             </div>
             <div className={styles.rightSection}>
               <div className={styles.rightSectionTitleWrapper}>
-                <div className={styles.rightSectionTitle}>Expenses</div>
+                <div className={styles.rightSectionTitle}>Past Expences</div>
               </div>
-              <div className={styles.rightSectionBody}></div>
+              <div className={styles.rightSectionBody}>
+                This Month:
+                {pastServiceList.length > 0
+                  ? ' ' +
+                    pastServiceList.reduce((sum, next) => sum + Number(next.price_snapshot), 0)
+                  : ' ' + 0}
+                €
+              </div>
             </div>
           </div>
         </div>
